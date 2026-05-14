@@ -1,13 +1,15 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Semillero Sophia'
-copyright = '2026, CarlosMahecha'
+copyright = '2026, UNIMINUTO'
 author = 'CarlosMahecha'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
 
-extensions = []
+extensions = [
+    "sphinx_design",
+]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -22,8 +24,8 @@ html_theme = "sphinx_rtd_theme"
 html_baseurl = '/semillero-sophia-docs/'
 
 html_title = "Documentación"
-html_favicon = "_static/logoSophia.png"
-html_logo = "_static/logoSophia.png"
+html_favicon = "_static/img/logoSophia.png"
+html_logo = None
 
 html_theme_options = {
     'collapse_navigation': False,
@@ -38,8 +40,10 @@ html_css_files = [
     'custom.css',
 ]
 
-
-# html_js_files = []
+html_js_files = [
+    'js/particles.min.js',
+    'js/particles-config.js',
+]
 # html_extra_path = []
 
 # Opcional (mejora compatibilidad)

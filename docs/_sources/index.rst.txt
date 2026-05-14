@@ -12,15 +12,14 @@ Semillero Sophia
 
    quienes_somos
    linea_investigacion
-
-
+   
 .. toctree::
    :maxdepth: 2
    :caption: Contenido:
 
    introduccion
-   conceptos
    metodologia
+   conceptos
    aplicaciones
    conclusiones
-
+   
