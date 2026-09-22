@@ -1,0 +1,32 @@
+
+\begin{tikzpicture}[scale=3, transform shape, >=stealth]
+
+  \tikzset{
+    nodo neurona/.style={
+      rectangle,
+      rounded corners,
+      draw=colorEjes,
+      color=colorTexto,
+      very thick
+    }
+  }
+
+  % Nodos
+  \draw node (x) [color=colorTexto, align=center] at (0.8,1) {Entrada \\ $x$};
+
+  \node (f) [
+    nodo neurona,
+    minimum size=18mm,
+    align=center
+  ] at (3.5,1) {Caja Negra \\ $f(x)$};
+
+  \draw node (y) [color=colorTexto, align=center] at (6.2,1) {Salida \\ $y$};
+
+  % Conexiones
+  \draw[-{Latex[length=4mm, width=6mm]}, line width=2.5pt, color=colorTexto] (x) -- (f);
+  \draw[-{Latex[length=4mm, width=6mm]}, line width=2.5pt, color=colorTexto] (f) -- (y);
+
+  % Lienzo
+  \path[use as bounding box] (0,0) rectangle (7,2);
+
+\end{tikzpicture}

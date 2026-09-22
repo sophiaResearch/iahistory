@@ -1,0 +1,79 @@
+\begin{tikzpicture}[scale=2, transform shape, >=stealth]
+
+  \tikzset{
+    nodo neurona/.style={
+      rectangle,
+      rounded corners,
+      draw=colorEjes,
+      color=colorTexto,
+      very thick
+    }
+  }
+
+\tikzset{
+  nodo capa/.style={
+    rectangle,
+    rounded corners,
+    draw=colorPrimario, % Color del borde
+    fill=colorPrimario,    % Color del relleno (fondo)
+    text=colorFondo,    % Color de la letra
+    very thick
+  }
+}
+
+  % Nodos
+  \draw node (x) [color=colorTexto] at (1,1.75) {Entrada};
+  \draw node (y) [color=colorTexto] at (13,1.75) {Salida};
+
+  % Red neuronal
+  \draw node [color=colorTexto] at (7,3.75) {Caja Negra / Red neuronal};
+  \node (frn) [
+    nodo neurona,
+	minimum width=9cm,
+    minimum height=3cm,
+    align=center
+  ] at (7,1.75) {};
+
+  \node (f1) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (3.5,1.75) {Capa \\ 1};
+  \node (f2) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (5.25,1.75) {Capa \\ 2};
+  \node (f3) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (7,1.75) {Capa \\ 3};
+  \node (f4) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (8.75,1.75) {Capa \\ 4};
+  \node (f5) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (10.5,1.75) {Capa \\ 5};
+
+  % Conexiones
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (x) -- (f1);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f1) -- (f2);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f2) -- (f3);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f3) -- (f4);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f4) -- (f5);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f5) -- (y);
+
+  % Lienzo
+  \path[use as bounding box] (0,0) rectangle (14,4);
+
+\end{tikzpicture}

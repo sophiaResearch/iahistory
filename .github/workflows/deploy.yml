@@ -1,0 +1,70 @@
+name: Deploy Sphinx Docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - Libro-ia
+  workflow_dispatch:
+
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias de LaTeX y gráficos (para TikZ)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-pictures \
+            texlive-lang-spanish \
+            pdf2svg \
+            poppler-utils
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Instalar dependencias de Python
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Compilar documentación HTML con Sphinx
+        run: |
+          make html
+
+      - name: Crear archivo .nojekyll
+        run: |
+          touch build/html/.nojekyll
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir artefacto de compilación
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'build/html'
+
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

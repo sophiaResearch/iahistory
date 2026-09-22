@@ -1,0 +1,78 @@
+\begin{tikzpicture}[scale=2, transform shape, >=stealth]
+
+  \tikzset{
+    nodo neurona/.style={
+      rectangle,
+      rounded corners,
+      draw=colorEjes,
+      color=colorTexto,
+      very thick
+    }
+  }
+
+\tikzset{
+  nodo capa/.style={
+    rectangle,
+    rounded corners,
+    draw=colorPrimario, % Color del borde
+    fill=colorPrimario,    % Color del relleno (fondo)
+    very thick
+  }
+}
+
+  % Nodos
+  \draw node (x) [color=colorTexto,scale=2] at (1,1.75) {$x$};
+  \draw node (y) [color=colorTexto,scale=2] at (13,1.75) {$\hat{y}$};
+
+  % Red neuronal
+  \draw node [color=colorTexto,scale=2] at (7,3.75) {$f_{NN}(x)$};
+  \node (frn) [
+    nodo neurona,
+	minimum width=9cm,
+    minimum height=3cm,
+    align=center
+  ] at (7,1.75) {};
+
+  \node (f1) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (3.5,1.75) {};
+  \node (f2) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (5.25,1.75) {};
+  \node (f3) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (7,1.75) {};
+  \draw node (puntos) [color=colorTexto, scale=1.5] at (8.75, 1.75) {$\dots$};
+  \node (f5) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (10.5,1.75) {};
+
+  % Conexiones
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (x) -- (f1);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f1) -- (f2);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f2) -- (f3);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f3) -- (puntos);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (puntos) -- (f5);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f5) -- (y);
+
+  \draw node [color=colorFondo,scale=1.3] at (3.5 ,1.75) {$f^{(1)}$};
+  \draw node [color=colorFondo,scale=1.3] at (5.25,1.75) {$f^{(2)}$};
+  \draw node [color=colorFondo,scale=1.3] at (7   ,1.75) {$f^{(3)}$};
+  \draw node [color=colorFondo,scale=1.3] at (10.5,1.75) {$f^{(L)}$};
+
+  % Lienzo
+  \path[use as bounding box] (0,0) rectangle (14,4);
+
+\end{tikzpicture}

@@ -1,25 +1,17 @@
-.. Semillero Sophia documentation master file, created by
-   sphinx-quickstart on Tue Mar 24 23:11:39 2026.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+:hide-toc:
 
-Semillero Sophia
-================
+===========================================================================
+Inteligencia Artificial: Fundamentos, Modelos y Práctica para el Mundo Real 
+===========================================================================
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Presentacion:
-
-   quienes_somos
-   linea_investigacion
-   
 .. toctree::
    :maxdepth: 2
    :caption: Contenido:
 
-   introduccion
-   metodologia
-   conceptos
-   aplicaciones
-   conclusiones
-   
+   chapters/0_preliminaries/index.rst
+   chapters/1_historia/index.rst
+   chapters/3_neurona/index.rst
+
+----
+
+.. include:: licencia.rst

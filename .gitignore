@@ -1,0 +1,89 @@
+# ==========================================
+# Compilaciones y Salidas de Sphinx
+# ==========================================
+# Excluye la carpeta de salida tanto si usas la estructura por defecto (build/)
+# como si renombraste la salida de compilación (_build/)
+build/
+_build/
+docs/_build/
+source/_build/
+
+# Archivos de caché creados por Sphinx al compilar
+.doctrees/
+*.mo
+
+# ==========================================
+# Entornos Virtuales de Python
+# ==========================================
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# ==========================================
+# Archivos de Caching y Runtime de Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+
+# Cobertura y Pruebas
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================================
+# Configuración de Editores e IDEs
+# ==========================================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+
+# Vim / Emacs
+*~
+*.swp
+*.swo
+
+# ==========================================
+# Archivos Temporales del Sistema Operativo
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.lsbfsum
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+create-chapter.sh
+
+# Archivos temporales de compilación de LaTeX (TikZ / pdflatex)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.toc
+*.out
+
+
