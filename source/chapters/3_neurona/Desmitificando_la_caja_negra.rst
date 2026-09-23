@@ -31,6 +31,8 @@ De una forma muy sencilla, y por supuesto sin entrar mucho a detalles formales d
 
 La representación de una función en matemáticas es muy simple: elegimos una letra (generalmente en minúscula), la cual representa el nombre de dicha máquina, y utilizamos "(" y ")" para describir qué entrada tiene nuestra "caja negra". El nombre más común es la letra :math:`f` seguido de :math:`(x)`, donde :math:`x` representa la entrada (cualquiera que sea). Además, representamos la salida como otra letra diferente, la más común es :math:`y`, la cual vamos a igualar a toda nuestra máquina, como se observa en :eq:`primera_funcion`.
 
+.. note::
+
    Para leer la ecuación :eq:`primera_funcion`, se hace de la siguiente manera: se dice el nombre de la función seguido de "de" y el nombre de los parámetros internos; en este caso, se dice ":math:`f` de :math:`x`".
 
 .. math::
@@ -83,6 +85,8 @@ Matemáticamente hablando esta operación se escribe de esta forma :eq:`composic
    {\huge (g \circ s)(x) = g(s(x))}
 
 Okey, pero vamos con algo más interesante: el contenido de nuestra red neuronal "caja negra". Tal vez ya pudieron intuir que efectivamente dentro de la red neuronal existen más funciones (máquinas), a las cuales las vamos a llamar "capas" (o en inglés *layers*), y estas están relacionadas o, mejor dicho, se les aplica la operación de composición entre ellas. Cabe aclarar que la forma de disponer nuestras capas define un tipo de arquitectura.
+
+.. note::
 
    Entiéndase **arquitectura** como la forma de organizar nuestros bloques de Lego y cómo estos interactúan; si se ordenan o interactúan de forma diferente, se dice que cambió la arquitectura.
 

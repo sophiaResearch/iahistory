@@ -1,22 +1,7 @@
+project = 'Inteligencia Artificial: Fundamentos, Modelos y Práctica para el Mundo Real'
+copyright = '2026, Semillero de Investigación SOPHIA - Corporación Universitaria Minuto de Dios. Licenciado bajo CC BY-NC 4.0'
+author = 'Semillero de Investigación SOPHIA'
 
-def make_authors():
-    authors = [
-        'David Santiago Mancera Robles',
-        'Leidi Johana Garzon Velasquez',
-        'Yomar Andrés Romero Polo', 
-        'Geferson Giobany Aparicio Higuera'
-    ]
-    result = ''
-    for i in range(len(authors)):
-        result += authors[i]
-        if i < len(authors) - 1:
-            result += ', '
-    return result
-        
-
-project = 'AIBook-SOPHIA'
-copyright = f'2026, {make_authors()}. Licenciado bajo CC BY-NC 4.0'
-author = make_authors()
 release = '0.1'
 
 # -- General configuration ---------------------------------------------------
@@ -138,9 +123,16 @@ html_context = {
 }
 
 
-html_title = "AIBook - SOPHIA"
+html_title = "Inteligencia Artificial: Fundamentos, Modelos y Práctica para el Mundo Real"
 html_static_path = ['_static']
 html_css_files = [
     'custom.css',
+]
+
+html_js_files =[
+    # Libreria para crear canvas (interaciones, animacion, etc..)
+    'https://cdn.jsdelivr.net/npm/p5@2.3.3/lib/p5.min.js',
+    # 2. Configuración global de colores y tema para el libro
+    'js/theme_config.js',
 ]
 

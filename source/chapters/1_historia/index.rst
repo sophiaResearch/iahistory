@@ -1,6 +1,6 @@
-================================================================
-El nacimiento de una nueva mente: la historia y esencia de la IA
-================================================================
+=======================================================================
+Cap 1: El nacimiento de una nueva mente: la historia y esencia de la IA
+=======================================================================
 
 Introducción a la sección de historia...
 

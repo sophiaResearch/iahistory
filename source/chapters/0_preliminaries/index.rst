@@ -8,7 +8,9 @@ Texto de ejemplo
 ----
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contenido:
 
    introduction
+   manifesto
+   colaboradores
