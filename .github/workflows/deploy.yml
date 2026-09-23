@@ -3,7 +3,7 @@ name: Deploy Sphinx Docs to GitHub Pages
 on:
   push:
     branches:
-      - Libro-ia
+      - main
   workflow_dispatch:
 
 
