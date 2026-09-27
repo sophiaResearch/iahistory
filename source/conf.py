@@ -131,7 +131,7 @@ html_css_files = [
 
 html_js_files =[
     # Libreria para crear canvas (interaciones, animacion, etc..)
-    'https://cdn.jsdelivr.net/npm/p5@2.3.3/lib/p5.min.js',
+    'js/p5@2.3.3.js',
     # 2. Configuración global de colores y tema para el libro
     'js/theme_config.js',
 ]
