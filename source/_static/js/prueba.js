@@ -1,6 +1,6 @@
 new p5((context) => {
   context.setup = () => {
-    let canvas = context.createCanvas(400, 250);
+    let canvas = context.createCanvas(400, 400);
     canvas.parent("p5-neurona-container");
   };
 
@@ -17,6 +17,7 @@ new p5((context) => {
     context.vertex(10, 100);
     context.vertex(100, 10);
     context.vertex(100, 100);
+    context.vertex(400, 400);
     context.endShape();
   };
 });

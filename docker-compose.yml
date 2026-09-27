@@ -1,0 +1,10 @@
+services:
+  docs:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./source:/app/source
+      - ./build:/app/build
+      - ./.git:/app/.git
+      - ./run.sh:/app/run.sh
