@@ -134,5 +134,6 @@ html_js_files =[
     'js/p5@2.3.3.js',
     # 2. Configuración global de colores y tema para el libro
     'js/theme_config.js',
+    'js/global_config.js',
 ]
 
