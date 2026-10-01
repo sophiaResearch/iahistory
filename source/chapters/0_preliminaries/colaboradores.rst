@@ -24,19 +24,25 @@ Liderazgo y Dirección Académica
 Autores y Estudiantes Investigadores
 -------------------------------------
 
-.. list-table:: Integrantes del Semillero
-   :widths: 35 65
+.. list-table:: Integrantes del Semillero y Contribuciones
+   :widths: 30 50 20
    :header-rows: 1
 
    * - Integrante
-     - Áreas de Contribución
+     - Áreas de Contribución y Capítulos
+     - Estado
    * - **David Santiago Mancera Robles**
-     - ...
-   * - **Elipzon Vivas Hurtado**
-     - ...
+     - Creador y desarrollador de la infraestructura de código/web del libro. Autor principal del **Capítulo 3: La regla invisible: ¿cómo decide una sola neurona?**
+     - En progreso
    * - **Leidi Johana Garzon Velasquez**
-     - ...
+     - Coautora del **Capítulo 1: El nacimiento de una nueva mente: la historia y esencia de la IA**.
+     - En progreso
    * - **Yomar Andrés Romero Polo**
-     - ...
+     - Coautor del **Capítulo 1: El nacimiento de una nueva mente: la historia y esencia de la IA**.
+     - En progreso
    * - **Geferson Giobany Aparicio Higuera**
-     - ...
+     - Autor del **Capítulo 2: De los datos al plano: representar el mundo para una IA**.
+     - En progreso
+   * - **Elipzon Vivas Hurtado**
+     - Colaborador egresado. Aportación de la línea de tiempo histórica y antecedentes de la IA.
+     - En proceso de implementacion

@@ -1,7 +1,7 @@
 
-=========================================================
-Cap 3: La regla invisible: ¿cómo decide una sola neurona?
-=========================================================
+===============================================================
+Capítulo 3. La regla invisible: ¿cómo decide una sola neurona?
+===============================================================
 
 Para las personas que no están relacionadas con el mundo de la inteligencia artificial, hablar de redes neuronales o neuronas pareciera algo extremadamente complicado o simplemente mágico, pero nada más lejos de la realidad. Vamos a examinar cómo esta 'caja negra' funciona realmente, desmitificando esa 'inteligencia' o, por lo menos, la sensación de que, de alguna manera, esta supiera cosas.
 
@@ -13,3 +13,7 @@ Ahondaremos en sus componentes y cómo estas 'piezas de Lego' encajan, además d
 
    Desmitificando_la_caja_negra.rst
    Dibujito_de_siempre_vs_la_realidad.rst
+   La_regla_escolar_a_la_frontera.rst
+   Nacimiento_de_la_neurona.rst
+   La_funcion_de_activacion.rst
+   Conclusiones.rst

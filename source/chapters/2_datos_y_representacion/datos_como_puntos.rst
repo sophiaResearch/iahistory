@@ -54,7 +54,7 @@ resultado. Para estudiar una situación real harían falta más datos y
 considerar otros factores.
 
 El plano cartesiano como mapa
-----------------------------
+-----------------------------
 
 Si elegimos dos características, podemos usar una como eje horizontal y
 la otra como eje vertical. Cada observación se convierte entonces en un
@@ -66,7 +66,7 @@ vector de entrada :math:`x`. En este ejemplo:
 
 .. math::
 
-   x = (x_1, x_2) = (\text{horas de práctica}, \text{puntaje})
+   {\huge x = (x_1, x_2) = (\text{horas de práctica}, \text{puntaje})}
 
 La etiqueta asociada, por ejemplo «aprobó» o «no aprobó», es información
 distinta de las coordenadas. Podemos representarla con :math:`y`. Así,

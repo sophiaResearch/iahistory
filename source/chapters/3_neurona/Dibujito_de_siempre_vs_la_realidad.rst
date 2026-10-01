@@ -3,7 +3,19 @@
 El "dibujito de siempre" vs. la realidad matemática
 ===================================================
 
-.. raw:: html
+.. container:: only-light
 
-   <div id="p5-neurona-container"></div>
-   <script src="../../_static/js/prueba.js"></script>
+   .. tikz:: La caja negra de la red neuronal
+      :align: center
+
+      \activarPaletaClara
+      \input{zoom_capa.tex}
+
+
+.. container:: only-dark
+
+   .. tikz:: La caja negra de la red neuronal
+      :align: center
+
+      \activarPaletaOscura
+      \input{zoom_capa.tex}

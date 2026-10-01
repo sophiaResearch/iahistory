@@ -33,6 +33,7 @@ tikz_additional_files = [
     'chapters/3_neurona/img/caja_negra_definida/caja_negra_definida.tex',
     'chapters/3_neurona/img/caja_con_capas/caja_con_capas.tex',
     'chapters/3_neurona/img/caja_negra_final/caja_negra_final.tex',
+    'chapters/3_neurona/img/zoom_capa/zoom_capa.tex',
 ]
 
 # Preámbulo de TikZ con la paleta "Deep Tech" y estilos centralizados

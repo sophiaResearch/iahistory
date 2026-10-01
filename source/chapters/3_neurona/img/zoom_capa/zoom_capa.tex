@@ -1,0 +1,33 @@
+\begin{tikzpicture}[scale=2, transform shape, >=stealth]
+
+\tikzset{
+  nodo capa/.style={
+    rectangle,
+    rounded corners,
+    draw=colorPrimario, % Color del borde
+    fill=colorPrimario,    % Color del relleno (fondo)
+    text=colorFondo,    % Color de la letra
+    very thick
+  }
+}
+
+  % Nodos
+  \draw node (x) [color=colorTexto,scale=1.5] at (1,2) {$f^{(2)}$};
+  \draw node (y) [color=colorTexto,scale=1.5] at (6,2) {$f^{(4)}$};
+
+  % Red neuronal
+  \node (f3) [
+    nodo capa,
+	minimum width=1cm,
+    minimum height=2.5cm,
+    align=center
+  ] at (3.5,2) {};
+  \draw node [color=colorFondo,scale=1.5] at (3.5   ,2) {$f^{(3)}$};
+  % Conexiones
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (x) -- (f3);
+  \draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (f3) -- (y);
+
+  % Lienzo
+  \path[use as bounding box] (0,0) rectangle (7,4);
+
+\end{tikzpicture}
