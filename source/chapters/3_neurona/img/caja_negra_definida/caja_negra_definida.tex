@@ -1,21 +1,9 @@
-
 \begin{tikzpicture}[scale=3, transform shape, >=stealth]
-
-  \tikzset{
-    nodo neurona/.style={
-      rectangle,
-      rounded corners,
-      draw=colorEjes,
-      color=colorTexto,
-      very thick
-    }
-  }
-
   % Nodos
   \draw node (x) [color=colorTexto, align=center] at (0.8,1) {Entrada \\ $x$};
 
   \node (f) [
-    nodo neurona,
+    nodo red_neuronal,
     minimum size=18mm,
     align=center
   ] at (3.5,1) {Caja Negra \\ $f(x)$};

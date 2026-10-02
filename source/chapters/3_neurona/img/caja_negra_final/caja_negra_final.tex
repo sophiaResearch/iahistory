@@ -1,25 +1,4 @@
 \begin{tikzpicture}[scale=2, transform shape, >=stealth]
-
-  \tikzset{
-    nodo neurona/.style={
-      rectangle,
-      rounded corners,
-      draw=colorEjes,
-      color=colorTexto,
-      very thick
-    }
-  }
-
-\tikzset{
-  nodo capa/.style={
-    rectangle,
-    rounded corners,
-    draw=colorPrimario, % Color del borde
-    fill=colorPrimario,    % Color del relleno (fondo)
-    very thick
-  }
-}
-
   % Nodos
   \draw node (x) [color=colorTexto,scale=2] at (1,1.75) {$x$};
   \draw node (y) [color=colorTexto,scale=2] at (13,1.75) {$\hat{y}$};
@@ -27,7 +6,7 @@
   % Red neuronal
   \draw node [color=colorTexto,scale=2] at (7,3.75) {$f_{NN}(x)$};
   \node (frn) [
-    nodo neurona,
+    nodo red_neuronal,
 	minimum width=9cm,
     minimum height=3cm,
     align=center
