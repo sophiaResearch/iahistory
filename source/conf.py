@@ -1,3 +1,15 @@
+# NO modificar
+import sys
+import os
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('custom_python_scripts'))
+
+# importar temas para latex, tkz y css
+from custom_python_scripts.styles_main import StylesProject
+# -------------------------------------
+
+
 project = 'Inteligencia Artificial: Fundamentos, Modelos y Práctica para el Mundo Real'
 copyright = '2026, Semillero de Investigación SOPHIA - Corporación Universitaria Minuto de Dios. Licenciado bajo CC BY-NC 4.0'
 author = 'Semillero de Investigación SOPHIA'
@@ -38,13 +50,17 @@ html_context = {
 
 html_title = "Inteligencia Artificial: Fundamentos, Modelos y Práctica para el Mundo Real"
 html_static_path = ['_static']
+
+
+StylesProject.create_css_code() 
 html_css_files = [
-    'custom.css',
+    'css/custom.css',
+    'css/theme_vars.css'
 ]
 
 html_js_files =[
     # Libreria para crear canvas (interaciones, animacion, etc..)
-    'js/p5@2.3.3.js',
+    'js/libs/p5@2.3.3.js',
     # 2. Configuración global de colores y tema para el libro
     'js/theme_config.js',
     'js/global_config.js',
@@ -52,6 +68,7 @@ html_js_files =[
 
 
 # -- Configuración de LaTeX / MathJax / TikZ ----------------------------------
+
 
 # Formato de salida para los gráficos TikZ (svg es ultra nítido en web)
 tikz_tikzgraph_format = 'svg'
@@ -65,15 +82,6 @@ tikz_additional_files = [
     'chapters/3_neurona/img/zoom_capa/zoom_capa.tex',
 ]
 
-# NO modificar
-import sys
-import os
-sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, os.path.abspath('custom_python_scripts'))
-
-# importar temas para latex tkz
-from custom_python_scripts.styles_main import LatexStyles
 
 tikz_latex_preamble = rf"""
 \usepackage{{xcolor}}
@@ -86,5 +94,5 @@ tikz_latex_preamble = rf"""
 
 % Desactiva el fondo del lienzo en LaTeX
 \nopagecolor
-{LatexStyles.create_styles()}
+{StylesProject.create_latex_code()}
 """

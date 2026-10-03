@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+
+.bd-content p, .bd-content li {
+    color: var(--pst-color-text-base) !important;
+}
+
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* ============================================================================================= */
+/* CONFIGURACION TEXTO */
+/* ============================================================================================= */
+
+/* Espaciado para fórmulas matemáticas */
+.math {
+    overflow-x: auto;
+}
+
+body, article, .content, .bd-content {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.025em;
+}
+
+code, kbd, pre, samp {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.95em;
+}
+
+/* ============================================================================================= */
+/* CONFIGURACION IMAGENES */
+/* ============================================================================================= */
+
+html[data-theme="dark"] .bd-content img {
+    background-color: transparent !important;
+    filter: none !important;
+}
+
+
+html[data-theme="light"] .bd-content img {
+    background-color: transparent !important;
+    filter: none !important;
+}
+
+/* Centrar gráficos TikZ e imágenes en las páginas */
+.tikz figure, .tikz img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}

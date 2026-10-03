@@ -1,0 +1,21 @@
+\begin{tikzpicture}[scale=2, transform shape, >=stealth]
+
+	% Nodos de entrada
+	\node (input1) [color=colorTexto] at (0,0.5) {Input 1};
+	\node (input2) [color=colorTexto] at (0,-0.5) {Input 2};
+
+	% Nodo Neurona
+	\node (neurona) [nodo neurona] at (2,0) {Neurona};
+
+	% Nodo de salida
+	\node (output) [color=colorTexto] at (4,0) {Output};
+
+	% Conexiones
+	\draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (input1) -- (neurona);
+	\draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (input2) -- (neurona);
+	\draw[-{Latex[length=4mm, width=4mm]}, line width=2pt, color=colorTexto] (neurona) -- (output);
+
+	% Lienzo
+	\path[use as bounding box] (-1,-1) rectangle (5,1);
+
+\end{tikzpicture}

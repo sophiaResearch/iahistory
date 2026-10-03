@@ -11,32 +11,35 @@ window.AIBookTheme = {
     );
   },
 
-  // Paletas de colores centralizadas
-  colors: {
-    light: {
-      bg: [233, 236, 239], // GrisPizarraClaro (#E9ECEF)
-      nodeBg: [248, 250, 252], // BlancoSuperficie (#F8FAFC)
-      text: [30, 41, 59], // GrisCarbon (#1E293B)
-      textMuted: [71, 85, 105], // GrisMedio (#475569)
-      primary: [124, 58, 237], // Violeta (#7C3AED)
-      accent1: [8, 145, 178], // CyanProfundo (#0891B2) - Entradas
-      accent2: [224, 86, 112], // RosaCoral (#E05670) - Salidas
-      stroke: [203, 213, 225], // GrisBorde (#CBD5E1)
-    },
-    dark: {
-      bg: [44, 44, 44], // GrisPizarraOscuro (#2C2C2C)
-      nodeBg: [56, 56, 56], // GrisSuperficieOscuro (#383838)
-      text: [228, 228, 228], // GrisClaro (#E4E4E4)
-      textMuted: [163, 163, 163], // GrisNeutroMuted (#A3A3A3)
-      primary: [179, 156, 208], // Lavanda (#B39CD0)
-      accent1: [168, 218, 220], // CyanClaro (#A8DADC) - Entradas
-      accent2: [255, 193, 204], // RosaSuave (#FFC1CC) - Salidas
-      stroke: [68, 68, 68], // GrisBordeOscuro (#444444)
-    },
+  // Helper para convertir hex (#RRGGBB) a arreglo RGB [R, G, B]
+  _hexToRgb(hex) {
+    if (!hex) return [0, 0, 0];
+    const cleanHex = hex.trim().replace("#", "");
+    return [
+      parseInt(cleanHex.substring(0, 2), 16) || 0,
+      parseInt(cleanHex.substring(2, 4), 16) || 0,
+      parseInt(cleanHex.substring(4, 6), 16) || 0,
+    ];
   },
 
-  // Retorna la paleta activa según el tema actual
+  // Helper para leer variables CSS del DOM
+  _getCssVar(varName) {
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue(varName)
+      .trim();
+  },
+
+  // Retorna la paleta activa leyendo directamente las CSS vars del tema activo
   getPalette() {
-    return this.isDark() ? this.colors.dark : this.colors.light;
+    return {
+      bg: this._hexToRgb(this._getCssVar("--pst-color-background")),
+      nodeBg: this._hexToRgb(this._getCssVar("--pst-color-surface")),
+      text: this._hexToRgb(this._getCssVar("--pst-color-text-base")),
+      textMuted: this._hexToRgb(this._getCssVar("--pst-color-text-muted")),
+      primary: this._hexToRgb(this._getCssVar("--pst-color-primary")),
+      accent1: this._hexToRgb(this._getCssVar("--pst-color-secondary")),
+      accent2: this._hexToRgb(this._getCssVar("--pst-color-inline-code")),
+      stroke: this._hexToRgb(this._getCssVar("--pst-color-border")),
+    };
   },
 };
