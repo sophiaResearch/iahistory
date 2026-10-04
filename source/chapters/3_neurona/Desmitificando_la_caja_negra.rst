@@ -27,9 +27,11 @@ Vamos a empezar por algo que ya sabemos, que una red neuronal es una "caja negra
 
 Esta forma de ver el problema, aunque es muy simple, es una manera muy acertada de cómo funciona en este caso nuestra primera pieza de Lego, y si me permiten podemos empezar a definir nuestro problema de una forma un poco más rigurosa, lo primero de todo es saber que nuestro dibujito de la "caja negra" tiene relación con algo llamado "funciones" en matemáticas.
 
-De una forma muy sencilla, y por supuesto sin entrar mucho a detalles formales de la matemática, vamos a decir que una "función" es una máquina que transforma una entrada (cualquiera) y saca una salida (también cualquiera) que depende de la entrada, en otras palabras, entra un "elemento" a la máquina, la máquina "modifica" dicho elemento, y sale un nuevo elemento que es resultado de la modificación del primero, esto último es muy importante, porque si se cambia la entrada también se cambia la salida.
+Para entenderlo de forma muy sencilla, vamos a imaginar que una función es como una máquina de transformaciones: le entregamos una entrada cualquiera, la máquina la procesa internamente y nos devuelve una salida totalmente nueva. Lo verdaderamente importante de esta máquina es que no inventa respuestas al azar; la salida depende por completo de lo que entró al inicio. Si cambias la entrada, la salida cambia automáticamente.
 
-La representación de una función en matemáticas es muy simple: elegimos una letra (generalmente en minúscula), la cual representa el nombre de dicha máquina, y utilizamos "(" y ")" para describir qué entrada tiene nuestra "caja negra". El nombre más común es la letra :math:`f` seguido de :math:`(x)`, donde :math:`x` representa la entrada (cualquiera que sea). Además, representamos la salida como otra letra diferente, la más común es :math:`y`, la cual vamos a igualar a toda nuestra máquina, como se observa en :eq:`primera_funcion`.
+Representar una función en matemáticas es bastante sencillo. Primero, elegimos una letra minúscula para darle nombre a nuestra máquina, la más famosa de todas es la letra :math:`f`. Luego, usamos paréntesis para indicar qué entra en nuestra caja negra: si la entrada se llama :math:`x`, escribimos :math:`f(x)`.
+
+Por último, nos falta la salida. Para representarla, elegimos otra letra (casi siempre la :math:`y`) y la igualamos al resultado de toda nuestra máquina, como se observa en :eq:`primera_funcion`.
 
 .. note::
 
@@ -171,6 +173,6 @@ Y, por supuesto, no podíamos dejar esto en puras fórmulas. Aquí está el dibu
       \activarPaletaOscura
       \input{caja_negra_final.tex}
 
-Como pueden ver en el dibujito, no hay magia: la entrada :math:`x` entra a la primera capa :math:`f^{(1)}`, su salida pasa inmediatamente a ser la entrada de :math:`f^{(2)}`, el proceso se repite sucesivamente a través de todas las :math:`L` capas hasta que la última función :math:`f^{(L)}` nos entrega el resultado final :math:`\hat{y}`.
+Como pueden ver en el dibujito, no hay magia: la entrada :math:`x` pasa a la primera capa :math:`f^{(1)}`, su salida pasa inmediatamente a ser la entrada de :math:`f^{(2)}`, el proceso se repite sucesivamente a través de todas las :math:`L` capas hasta que la última función :math:`f^{(L)}` nos entrega el resultado final :math:`\hat{y}`.
 
 Hasta aquí todo parece bastante ordenado, pero... ¿qué hay realmente dentro de cada una de estas capas :math:`f^{(l)}`? ¿De qué está hecha esa función por dentro? En la siguiente sección abriremos por fin estas capas para conocer al verdadero ladrillo fundamental de todo este edificio: la neurona.
