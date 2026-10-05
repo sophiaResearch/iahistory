@@ -1,0 +1,55 @@
+\begin{tikzpicture}[scale=2, transform shape, >=stealth]
+    % Grid de fondo sutil
+    \draw[very thin, colorTextoMuted] (0,0) grid (6,6);
+
+    % Ejes cartesianos (x1 y x2)
+    \draw[->, thick, colorTextoMuted] (0,0) -- (6,0) node[right] {$x_1$};
+    \draw[->, thick, colorTextoMuted] (0,0) -- (0,6) node[above] {$x_2$};
+
+    % Marcas en los ejes (1 a 7)
+    \foreach \x in {1,2,3,4,5,6,7}
+        \draw[colorTextoMuted] (\x,2pt) -- (\x,-2pt) node[below, scale=0.6] {\x};
+    \foreach \y in {1,2,3,4,5,6,7}
+        \draw[colorTextoMuted] (2pt,\y) -- (-2pt,\y) node[left, scale=0.6] {\y};
+
+    % ==========================================
+    % PUNTOS: CUADRADOS (1 a 4 / Clase NO)
+    % ==========================================
+    \coordinate (C1) at (1.0, 1.5);
+    \coordinate (C2) at (2.0, 1.0);
+    \coordinate (C3) at (1.5, 3.0);
+    \coordinate (C4) at (3.0, 2.0);
+
+    \foreach \p in {C1, C2, C3, C4} {
+        \draw[fill=colorEntrada, draw=colorEntrada, thick, shift={(\p)}] 
+            (-0.12,-0.12) rectangle (0.12,0.12);
+    }
+
+    % Etiquetas de los cuadrados
+    \node[above, colorEntrada, scale=0.6, yshift=3pt] at (C1) {$(1.0, 1.5)$};
+    \node[above, colorEntrada, scale=0.6, yshift=3pt] at (C2) {$(2.0, 1.0)$};
+    \node[above,  colorEntrada,scale=0.6, yshift=3pt]  at (C3) {$(1.5, 3.0)$};
+    \node[above, colorEntrada, scale=0.6, yshift=3pt] at (C4) {$(3.0, 2.0)$};
+
+    % ==========================================
+    % PUNTOS: TRIÁNGULOS (5 a 8 / Clase SÍ)
+    % ==========================================
+    \coordinate (T5) at (4.5, 2.0);
+    \coordinate (T6) at (2.0, 5.0);
+    \coordinate (T7) at (4.0, 4.5);
+    \coordinate (T8) at (3.5, 3.5);
+
+    \foreach \p in {T5, T6, T7, T8} {
+        \draw[fill=colorSalida, draw=colorSalida, thick, shift={(\p)}] 
+            (0, 0.15) -- (-0.14, -0.12) -- (0.14, -0.12) -- cycle;
+    }
+
+    % Etiquetas de los triángulos
+    \node[above right, colorSalida, scale=0.6] at (T5) {$(4.5, 2.0)$};
+    \node[above right, colorSalida, scale=0.6] at (T6) {$(2.0, 5.0)$};
+    \node[above right, colorSalida, scale=0.6] at (T7) {$(4.0, 4.5)$};
+    \node[above right, colorSalida, scale=0.6] at (T8) {$(3.5, 3.5)$};
+
+    % Bounding box limpia
+    \path[use as bounding box] (0,0) rectangle (6,6);
+\end{tikzpicture}

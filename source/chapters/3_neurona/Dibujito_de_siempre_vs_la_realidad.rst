@@ -87,3 +87,34 @@ No las puedes ver directamente con los ojos, pero conoces la posición exacta de
      - 3.5
      - 3.5
      - SÍ
+
+Estamos de acuerdo en que, con estos datos, podemos hacer una representación de dónde está cada una de las figuras. Nosotros, como humanos, podemos ver esta gráfica y decir que los triángulos están en la parte superior derecha del plano; pero una máquina solo tiene los datos como información de entrada y nada más.
+
+.. container:: only-light
+
+    .. tikz:: Figuras en el piso
+       :align: center
+
+       \activarPaletaClara
+       \input{grafica_datos_neurona.tex}
+
+
+.. container:: only-dark
+
+    .. tikz:: Figuras en el piso
+       :align: center
+
+       \activarPaletaOscura
+       \input{grafica_datos_neurona.tex}
+
+
+Para solucionarlo, tal como lo haría una máquina, tenemos que definir nuestro problema de forma matemática. Para esto vamos a utilizar geometría. ¿Cómo sabemos en qué lugar están los triángulos? El primer pensamiento es separar las figuras de alguna manera; en este caso, vamos a utilizar una línea, la cual va a ser la frontera entre los triángulos y los cuadrados.
+
+La forma matemática de "dibujar" líneas dentro de este espacio es utilizando la ecuación de la recta. Para nuestro caso, vamos a definirla como una función, recuerdan nuestra primera pieza de lego :eq:`funcion_recta`. 
+
+.. math::
+   :label: funcion_recta
+
+   {\huge f(x_1) = mx_1 + b = x_2}
+
+¿Qué significa esta expresión? Lo primero que tenemos es :math:`f(x_1)` que, como ya lo habíamos hablado, es el nombre de la función y también nos indica que su entrada es :math:`x_1`. La expresión :math:`mx_1 + b` es lo que hace nuestra máquina, es decir, la transformación. Por último, :math:`x_2` representa la salida de nuestra máquina. Aunque en matemáticas generalmente se omite escribir de forma explícita la salida (en este caso :math:`x_2`), la incluimos aquí por motivos pedagógicos: para visibilizar con claridad qué valor resulta de aplicar esta transformación en el plano.

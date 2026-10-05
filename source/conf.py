@@ -80,6 +80,7 @@ tikz_additional_files = [
     'chapters/3_neurona/img/caja_con_capas/caja_con_capas.tex',
     'chapters/3_neurona/img/caja_negra_final/caja_negra_final.tex',
     'chapters/3_neurona/img/zoom_capa/zoom_capa.tex',
+    'chapters/3_neurona/img/grafica_datos_neurona/grafica_datos_neurona.tex',
 ]
 
 
@@ -89,6 +90,7 @@ tikz_latex_preamble = rf"""
 \usepackage{{pagecolor}}
 \usepackage{{pgfplots}}
 \usetikzlibrary{{arrows.meta}}
+\usetikzlibrary{{calc}}
 \pgfplotsset{{compat=1.18}}
 
 
