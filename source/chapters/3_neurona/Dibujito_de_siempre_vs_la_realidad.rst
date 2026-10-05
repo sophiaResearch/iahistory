@@ -1,9 +1,8 @@
-
 ===================================================
 El "dibujito de siempre" vs. la realidad matemática
 ===================================================
 
-Ya que entendemos cómo funcionan las capas a un nivel superficial, podemos entrar en los componentes de estas. Para esto, tenemos que ponernos en perspectiva y elegir una de estas capas, y acercarnos para verla por dentro.
+Una vez comprendido el papel de las capas a nivel general, es momento de inspeccionar sus componentes internos. Para lograrlo, elijamos una de las capas intermedias y acerquémonos a examinar su estructura desde dentro.
 
 .. container:: only-light
 
@@ -22,25 +21,69 @@ Ya que entendemos cómo funcionan las capas a un nivel superficial, podemos entr
        \activarPaletaOscura
        \input{zoom_capa.tex}
 
-Tomemos como ejemplo la capa número 3 :math:`f^{(3)}`, la cual tiene como entrada la salida de la capa número 2 :math:`f^{(2)}`, y le pasa su salida a la capa 4 :math:`f^{(4)}`, como nos muestra nuestro dibujito.
+Tomemos como ejemplo la tercera capa, :math:`f^{(3)}`, la cual recibe como entrada la salida de la capa anterior, :math:`f^{(2)}`, y transfiere su propio resultado a la capa siguiente, :math:`f^{(4)}`, tal como ilustra nuestro esquema.
 
-Con esto, abrimos paso a nuestro segundo bloque de Lego, la famosa **Neurona**. Históricamente, la forma habitual de presentar la **Neurona Artificial** es comparándola con una neurona biológica: nos hablan de dendritas que reciben señales, un soma que las procesa y un axón que transmite el impulso eléctrico. 
+Con esta imagen en mente, abrimos paso a nuestro segundo bloque fundamental: la famosa **neurona artificial**. 
 
-El problema de esta metáfora es que, a menos que seas biólogo, no te ayuda a entender qué hace realmente el algoritmo en una computadora. Peor aún, hace parecer que la inteligencia artificial es un misterio biológico cuando en realidad es algo mucho más sencillo y elegante.
+Históricamente, la forma habitual de presentar la neurona artificial ha sido comparándola con una neurona biológica: se habla de dendritas que reciben señales, un soma que las procesa y un axón que transmite el impulso eléctrico. El problema de esta metáfora es que, a menos que tengas formación en biología, no ayuda a entender qué hace realmente el algoritmo en una computadora. Peor aún, hace parecer que la inteligencia artificial es un misterio biológico cuando, en realidad, es una estructura matemática elegante y accesible.
 
-Para nosotros, una **Neurona artificial** es simplemente una máquina que toma decisiones; específicamente, decisiones binarias o decisiones de **SÍ** o **NO**. Esto lo hace con base en unas entradas que recibe y, como resultado, nos entrega una respuesta definitiva: **SÍ** o **NO**.
+Para nosotros, una **neurona artificial** es simplemente una máquina de decisiones binarias. Su trabajo consiste en recibir un conjunto de datos de entrada y, tras evaluar su importancia, entregar una respuesta categórica: **SÍ** o **NO**.
 
 .. note::
  
-   Ahora bien, cuando decimos que el resultado es un **SÍ** o un **NO**, debemos hacer la precisión de que en la práctica esto es algo un poco más sutil que una respuesta categórica. Sin embargo, para esta primera instancia, esta simplificación nos sirve perfectamente para avanzar y construir una idea clara y general de cómo funciona.
+   Aun cuando afirmamos que el resultado es un **SÍ** o un **NO**, cabe precisar que en la práctica la salida puede representar un grado de certeza o probabilidad. Sin embargo, para esta primera aproximación, la interpretación binaria es perfecta para construir una intuición sólida.
 
-Otra cosa muy importante que debemos saber es que una **Capa** está compuesta por **Neuronas**; esta es la razón principal para empezar a explicarlas de forma individual. 
+Cada **capa** de la red está compuesta internamente por estas **neuronas** trabajando en paralelo; de allí la importancia de estudiarlas primero de forma individual. 
 
-Por eso, vamos a repasar rápidamente toda nuestra **Arquitectura**: tenemos el modelo general de la Red Neuronal, la cual no es más que una máquina (**Función**) donde entra un dato y sale otro resultado con sentido. Esta Red Neuronal está compuesta por un conjunto de capas que van transformando progresivamente la entrada para generar una salida, donde la interacción entre ellas consiste en que la salida de una capa es la entrada de la siguiente (**operación de composición de funciones**). Y, a su vez, cada una de esas capas está compuesta internamente por **Neuronas**.
+Con esto completamos el mapa conceptual de nuestra arquitectura: la **Red Neuronal** es el modelo global (una función :math:`y = f(x)` que transforma entradas en salidas con sentido); esta red está construida a partir de **capas** compuestas que se encadenan mediante la composición de funciones; y, a su vez, cada capa está integrada por un conjunto de **neuronas**.
 
 .. math::
    :label: relacion_RN_capa_neurona
 
    {\huge \text{Red Neuronal} \leftarrow \text{Capa} \leftarrow \text{Neurona}}
 
+Para entender cómo la neurona toma decisiones, debemos resolver un problema: imagina que tienes un grupo de figuras mezcladas en el piso algunas son **cuadrados** y otras son **triángulos** y tu misión es encontrar de qué lado están los **triángulos**. 
 
+No las puedes ver directamente con los ojos, pero conoces la posición exacta de cada una en el piso y también sabes qué tipo de figura es. Además, la ubicación de estas figuras no es aleatoria: los cuadrados tienden a ocupar una región del piso y los triángulos otra. Conociendo únicamente sus posiciones y sus tipos, ¿cómo encontrarías una forma para clasificarlas?
+
+.. list-table:: Posiciones y tipos de figuras en el piso
+   :widths: 25 25 25 25
+   :header-rows: 1
+   :align: center
+
+   * - Figura
+     - Coordenada :math:`x_1`
+     - Coordenada :math:`x_2`
+     - ¿Es Triángulo? (:math:`y`)
+   * - 1
+     - 1.0
+     - 1.5
+     - NO
+   * - 2
+     - 2.0
+     - 1.0
+     - NO
+   * - 3
+     - 1.5
+     - 3.0
+     - NO
+   * - 4
+     - 3.0
+     - 2.0
+     - NO
+   * - 5
+     - 4.5
+     - 2.0
+     - SÍ
+   * - 6
+     - 2.0
+     - 5.0
+     - SÍ
+   * - 7
+     - 4.0
+     - 4.5
+     - SÍ
+   * - 8
+     - 3.5
+     - 3.5
+     - SÍ
