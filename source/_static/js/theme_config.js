@@ -42,4 +42,16 @@ window.AIBookTheme = {
       stroke: this._hexToRgb(this._getCssVar("--pst-color-border")),
     };
   },
+  getPaletteHex() {
+    return {
+      bg:        this._getCssVar("--pst-color-background"),
+      nodeBg:    this._getCssVar("--pst-color-surface"),
+      text:      this._getCssVar("--pst-color-text-base"),
+      textMuted: this._getCssVar("--pst-color-text-muted"),
+      primary:   this._getCssVar("--pst-color-primary"),
+      accent1:   this._getCssVar("--pst-color-secondary"),
+      accent2:   this._getCssVar("--pst-color-inline-code"),
+      stroke:    this._getCssVar("--pst-color-border"),
+    };
+  },
 };

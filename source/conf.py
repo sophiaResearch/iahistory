@@ -64,6 +64,10 @@ html_js_files =[
     # 2. Configuración global de colores y tema para el libro
     'js/theme_config.js',
     'js/global_config.js',
+    'js/component_registry.js',
+    'js/components/button.js',
+    'js/components/chart.js',
+    'js/components/slider.js',
 ]
 
 

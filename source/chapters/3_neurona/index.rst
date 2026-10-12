@@ -12,8 +12,8 @@ Ahondaremos en sus componentes y cómo estas 'piezas de Lego' encajan, además d
    :caption: Contenido:
 
    Desmitificando_la_caja_negra.rst
+   Del_espacio_a_la_decision.rst
    Dibujito_de_siempre_vs_la_realidad.rst
-   La_regla_escolar_a_la_frontera.rst
    Nacimiento_de_la_neurona.rst
    La_funcion_de_activacion.rst
    Conclusiones.rst
