@@ -2,91 +2,55 @@
 
 ## Prerequisites
 
-- Python 3.8+ installed
-- `pip` package manager
+- Docker and Docker Compose installed
 
-## Installation
+## Usage with Docker Compose
 
-### Linux / macOS
+This project uses Docker Compose to provide a consistent development environment and to build the documentation.
 
-```bash
-chmod +x install.sh
-./install.sh
-```
+### 1. Start the Development Server (Live Preview)
 
-The script will:
-1. Check for Python 3
-2. Create a virtual environment (if not exists)
-3. Upgrade pip
-4. Install dependencies from `requirements.txt`
-
-### Windows
-
-```cmd
-install.bat
-```
-
-The script will:
-1. Check for Python
-2. Create a virtual environment (if not exists) using `venv\Scripts`
-3. Upgrade pip
-4. Install dependencies from `requirements.txt`
-
-## Building the Documentation
-
-### Linux / macOS
+To run the documentation server with live reloading:
 
 ```bash
-./run.sh
+docker-compose up
 ```
 
-Or manually:
+This command will:
+*   Build the Docker image (if not already built).
+*   Start a container with `sphinx-autobuild` running inside.
+*   Mount the `source/` directory from your host machine into the container, so any changes you make to the reStructuredText files will automatically trigger a rebuild and refresh in your browser.
+*   Mount the `build/` directory, making the generated HTML available on your host.
+*   The documentation will be accessible at `http://localhost:8000`.
+
+To stop the server, press `Ctrl+C` in your terminal.
+
+### 2. Build Static HTML Documentation
+
+To build the static HTML documentation without starting the live server:
 
 ```bash
-source ./venv/bin/activate
-make html
+docker-compose run --rm docs make html
 ```
 
-### Windows
+This command will:
+*   Build the documentation inside a temporary container.
+*   Place the generated HTML files in the `build/html` directory on your host machine.
 
-```cmd
-run.bat
-```
+### 3. Clean Build Artifacts
 
-Or manually:
-
-```cmd
-venv\Scripts\activate.bat
-sphinx-build source build
-```
-
-## Auto-Rebuild Server (Live Preview)
-
-Watches for changes and rebuilds automatically:
-
-### Linux / macOS
+To remove the generated `build/` directory:
 
 ```bash
-./run.sh
+docker-compose run --rm docs make clean
 ```
-
-This starts `sphinx-autobuild` which watches `source/` and rebuilds on change, serving at `http://localhost:8000`.
-
-### Windows
-
-```cmd
-run.bat
-```
-
-The `run.bat` script activates the venv and starts `sphinx-autobuild source build/html`, serving at `http://localhost:8000`.
 
 ## Project Structure
 
 - `source/` - Sphinx source files (`.rst`, `.py`, configs)
 - `build/` - Generated HTML output
-- `Makefile` - Minimal Makefile for Sphinx builds
-- `make.bat` - Windows equivalent of Makefile
-- `requirements.txt` - Python dependencies
+- `Dockerfile` - Docker configuration for the documentation environment.
+- `docker-compose.yml` - Docker Compose configuration for local development.
 
 ## Licencia
 
