@@ -1,0 +1,48 @@
+\begin{tikzpicture}[x=1.1cm, y=0.12cm, >=stealth]
+
+  % Fondo y cuadrícula
+  \fill[cyan!8] (0,0) rectangle (8,95);
+  \draw[xstep=1, ystep=10, cyan!25, very thin] (0,0) grid (8,90);
+
+  % Ejes
+  \draw[->, thick, color=blue!65!black] (0,0) -- (8.6,0) node[below right, color=colorTexto] {Horas de práctica};
+  \draw[->, thick, color=blue!65!black] (0,0) -- (0,96) node[left, color=colorTexto] {Puntaje};
+
+  % Marcas en los ejes
+  \foreach \x in {1,2,3,4} {
+    \draw[thin, color=blue!65!black] (\x,0) -- (\x,-2);
+    \node[below, color=colorTexto, font=\small] at (\x,0) {\x};
+  }
+
+  \foreach \y in {40,50,60,70,80} {
+    \draw[thin, color=blue!65!black] (-0.18,\y) -- (0.18,\y);
+    \node[left, color=colorTexto, font=\small] at (0,\y) {\y};
+  }
+
+  % Puntos: no aprobaron
+  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1.2pt] (1,42) circle (0.2);
+  \node[above left, text=orange!70!black, font=\small\bfseries] at (1,42) {A};
+
+  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1.2pt] (2,51) circle (0.2);
+  \node[above left, text=orange!70!black, font=\small\bfseries] at (2,51) {B};
+
+  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1.2pt] (1,49) circle (0.2);
+  \node[above left, text=orange!70!black, font=\small\bfseries] at (1,49) {F};
+
+  % Puntos: aprobaron
+  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1.2pt] (3,63) circle (0.2);
+  \node[above right, text=blue!70!black, font=\small\bfseries] at (3,63) {C};
+
+  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1.2pt] (4,68) circle (0.2);
+  \node[above right, text=blue!70!black, font=\small\bfseries] at (4,68) {D};
+
+  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1.2pt] (2,58) circle (0.2);
+  \node[above right, text=blue!70!black, font=\small\bfseries] at (2,58) {E};
+
+  % Etiquetas de grupos
+  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1pt] (5.35,82) circle (0.16);
+  \node[anchor=west, text=orange!70!black, font=\small\bfseries] at (5.65,82) {No aprobó};
+  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1pt] (5.35,72) circle (0.16);
+  \node[anchor=west, text=blue!70!black, font=\small\bfseries] at (5.65,72) {Aprobó};
+
+\end{tikzpicture}

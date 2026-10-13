@@ -78,6 +78,8 @@ html_js_files =[
 tikz_tikzgraph_format = 'svg'
 tikz_transparent = True
 tikz_additional_files = [
+    # --------------- CAPITULO 2 ------------
+    'chapters/2_datos_y_representacion/img/puntos_plano.tex',
     # --------------- CAPITULO 3 ------------
     'chapters/3_neurona/img/caja_negra/caja_negra.tex',
     'chapters/3_neurona/img/caja_negra_definida/caja_negra_definida.tex',
