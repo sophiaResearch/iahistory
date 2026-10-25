@@ -21,12 +21,23 @@ latex_tkz_style = r"""
         text=colorFondo,    % Color de la letra
         very thick
     },
-    % Estilo Neurona
-    nodo neurona/.style={
+    nodo circuloMorado/.style={
+        circle,
+        draw=colorPrimario,
+        fill=colorPrimario,
+        text=colorFondo
+    },
+    nodo circuloRojo/.style={
+        circle,
+        draw=colorSalida,
+        fill=colorSalida,
+        text=colorFondo
+    },
+    nodo circuloAzul/.style={
         circle,
         draw=colorEntrada,
-        fill=colorEntrada!20,
-        text=colorTexto
+        fill=colorEntrada,
+        text=colorEntrada
     }
 }
 

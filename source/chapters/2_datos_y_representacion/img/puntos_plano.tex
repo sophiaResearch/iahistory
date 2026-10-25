@@ -1,48 +1,62 @@
-\begin{tikzpicture}[x=1.1cm, y=0.12cm, >=stealth]
+\begin{tikzpicture}[scale=3, transform shape, >=stealth]
 
-  % Fondo y cuadrícula
-  \fill[cyan!8] (0,0) rectangle (8,95);
-  \draw[xstep=1, ystep=10, cyan!25, very thin] (0,0) grid (8,90);
+    % Fondo y cuadrícula
+    \draw[very thin, colorTextoMuted] (0,0) grid (4, 4);
 
-  % Ejes
-  \draw[->, thick, color=blue!65!black] (0,0) -- (8.6,0) node[below right, color=colorTexto] {Horas de práctica};
-  \draw[->, thick, color=blue!65!black] (0,0) -- (0,96) node[left, color=colorTexto] {Puntaje};
+    % Ejes cartesianos
+    \draw[->, thick, colorTextoMuted] (0,0) -- (4,0) node[right, scale=0.7] {Horas de práctica};
+    \draw[->, thick, colorTextoMuted] (0,0) -- (0,4) node[above, scale=0.7] {Puntaje};
 
-  % Marcas en los ejes
-  \foreach \x in {1,2,3,4} {
-    \draw[thin, color=blue!65!black] (\x,0) -- (\x,-2);
-    \node[below, color=colorTexto, font=\small] at (\x,0) {\x};
-  }
+    % % Marcas en el eje X (Horas)
+    \foreach \x in {0,1,2,3,4}
+        \draw[colorTextoMuted] (\x,2pt) -- (\x,-2pt) node[below, scale=0.6] {\x};
 
-  \foreach \y in {40,50,60,70,80} {
-    \draw[thin, color=blue!65!black] (-0.18,\y) -- (0.18,\y);
-    \node[left, color=colorTexto, font=\small] at (0,\y) {\y};
-  }
+    % % Marcas en el eje Y (Puntajes mapeados: (puntaje - 40) / 10)
+    \foreach \y/\score in {0/0, 1/20, 2/40, 3/60, 4/80}
+        \draw[colorTextoMuted] (2pt,\y) -- (-2pt,\y) node[left, scale=0.6] {\score};
 
-  % Puntos: no aprobaron
-  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1.2pt] (1,42) circle (0.2);
-  \node[above left, text=orange!70!black, font=\small\bfseries] at (1,42) {A};
+    % ==========================================
+    % PUNTOS: NO APROBARON
+    % ==========================================
+    \coordinate (pA) at (1, 2.1);  % Puntaje 42
+    \coordinate (pB) at (2, 2.55);  % Puntaje 51
+    \coordinate (pF) at (1, 2.45);  % Puntaje 49
 
-  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1.2pt] (2,51) circle (0.2);
-  \node[above left, text=orange!70!black, font=\small\bfseries] at (2,51) {B};
+    \foreach \p in {pA, pB, pF} {
+        \node[nodo circuloRojo, inner sep=1pt, line width=0.8pt] at (\p) {};
+    }
 
-  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1.2pt] (1,49) circle (0.2);
-  \node[above left, text=orange!70!black, font=\small\bfseries] at (1,49) {F};
+    % Etiquetas de los puntos (No aprobaron)
+    \node[above left, text=colorSalida, scale=0.6] at (pA) {A};
+    \node[above left, text=colorSalida, scale=0.6] at (pB) {B};
+    \node[above left, text=colorSalida, scale=0.6] at (pF) {F};
 
-  % Puntos: aprobaron
-  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1.2pt] (3,63) circle (0.2);
-  \node[above right, text=blue!70!black, font=\small\bfseries] at (3,63) {C};
+    % ==========================================
+    % PUNTOS: APROBARON
+    % ==========================================
+    \coordinate (pC) at (3, 3.15);  % Puntaje 63
+    \coordinate (pD) at (4, 3.4);  % Puntaje 68
+    \coordinate (pE) at (2, 2.9);  % Puntaje 58
 
-  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1.2pt] (4,68) circle (0.2);
-  \node[above right, text=blue!70!black, font=\small\bfseries] at (4,68) {D};
+    \foreach \p in {pC, pD, pE} {
+        \node[nodo circuloAzul, inner sep=1pt, line width=0.8pt] at (\p) {};
+    }
 
-  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1.2pt] (2,58) circle (0.2);
-  \node[above right, text=blue!70!black, font=\small\bfseries] at (2,58) {E};
+    % Etiquetas de los puntos (Aprobaron)
+    \node[above right, text=colorEntrada, scale=0.6] at (pC) {C};
+    \node[above right, text=colorEntrada, scale=0.6] at (pD) {D};
+    \node[above right, text=colorEntrada, scale=0.6] at (pE) {E};
 
-  % Etiquetas de grupos
-  \filldraw[fill=orange!85!yellow, draw=orange!70!black, line width=1pt] (5.35,82) circle (0.16);
-  \node[anchor=west, text=orange!70!black, font=\small\bfseries] at (5.65,82) {No aprobó};
-  \filldraw[fill=cyan!55!blue, draw=blue!70!black, line width=1pt] (5.35,72) circle (0.16);
-  \node[anchor=west, text=blue!70!black, font=\small\bfseries] at (5.65,72) {Aprobó};
+    % ==========================================
+    % ETIQUETAS DE GRUPOS (LEYENDA)
+    % ==========================================
+    \coordinate (L1) at (5.0, 4.5);
+    \coordinate (L2) at (5.0, 3.8);
+
+    \node[anchor=west, text=colorSalida, scale=0.6] at (4.2, 2) {No aprobó};
+    \node[anchor=west, text=colorEntrada, scale=0.6] at (4.2, 1.6) {Aprobó};
+
+    % Bounding box limpia
+    \path[use as bounding box] (0,0) rectangle (7, 5);
 
 \end{tikzpicture}
