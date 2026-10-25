@@ -49,7 +49,7 @@ new p5((context) => {
     sliderB = window.BookComponents.Registry.get("Slider")(
       0,   // Mínimo
       6,    // Máximo
-      0,    // Valor inicial
+      3,    // Valor inicial
       0.01,  // Step (Paso)
       { 
         context, 
