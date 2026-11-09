@@ -59,3 +59,21 @@ html[data-theme="light"] .bd-content img {
     margin-right: auto;
     max-width: 100%;
 }
+
+
+/*Configuracion del canvas y controles del canvas (animaciones e interactivos)*/
+
+.contenedor-interactivos{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.panel-controles{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 180px;
+}
